@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,6 +11,9 @@ import userIcon from "@/public/iconsax/user.svg";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
+import DrawerComponent from "../Drawer/Drawer";
+import MegaMenuProduct from "../MegaMenu";
+
 type DataButton = {
   name?: string;
   icon?: string;
@@ -15,9 +22,14 @@ type DataButton = {
 };
 
 const Navbar = () => {
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const onCloseDrawer = () => {
+    setOpenDrawer(false);
+  };
   const dataButton: DataButton[] = [
     { name: "Home", address: "/" },
-    { name: "Products", address: "/" },
+    // { name: "Products", address: "/", style: "products" },
     { name: "Blog", address: "/" },
     { name: "FAQ", address: "/" },
     { name: "Contact Us", address: "/" },
@@ -35,13 +47,19 @@ const Navbar = () => {
         <div className=" max-[800px]:hidden">
           <h1>LOGO</h1>
         </div>
-        <div className=" min-[800px]:hidden">
+        <div
+          onClick={() => setOpenDrawer(true)}
+          className=" min-[800px]:hidden"
+        >
           <MenuIcon />
         </div>
-        <div className="max-[800px]:hidden">
+        <div className="max-[800px]:hidden flex">
+          <MegaMenuProduct />
           {dataButton.map((d: DataButton, index: number) => (
             <Link key={index} href={d.address} className=" mx-3">
-              <button>{d.name}</button>
+              <button className="hover:text-primary-100 hover:border-spacing-1 hover:border-b hover:border-primary-100">
+                {d.name}
+              </button>
             </Link>
           ))}
         </div>
@@ -78,6 +96,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+      <DrawerComponent openDrawer={openDrawer} closeDrawer={onCloseDrawer} />
     </>
   );
 };
