@@ -64,61 +64,63 @@ const MegaMenuProduct = () => {
   };
 
   return (
-    <div className="group">
+    <div className="group ">
       <button className=" group-hover:text-primary-100 group-hover:border-spacing-1 group-hover:border-b group-hover:border-primary-100">
         Products
       </button>
-      <div className=" flex w-full  absolute px-24 left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-        <div className=" flex flex-col bg-slate-500 w-[20%] p-2 rounded-bl-lg border-spacing-1 border-r border-black">
-          {MegaMenuData.map((d: MegaMenuData, index: number) => (
-            <button
-              key={index}
-              onClick={() => getProducts(d.categoriesId)}
-              className=" my-2"
-            >
-              <div className=" flex flex-row justify-start items-center">
-                <Image
-                  src={d.icon ? d.icon : ""}
-                  width={20}
-                  height={20}
-                  alt={d.name}
-                />
-                <h3 className="mx-1 hover:text-primary-75 active:text-primary-75">
-                  {d.name}
-                </h3>
-              </div>
-            </button>
-          ))}
-        </div>
-        <div className=" w-[80%] bg-slate-500 flex justify-center items-center rounded-br-lg p-2">
-          <div className=" rounded-lg w-20 h-20 bg-white text-primary-75 flex justify-center items-center cursor-pointer mx-1">
-            <h1>view all</h1>
+      <div className="absolute invisible group-hover:visible mt-[59px] group-hover:inset-1 group-hover:bg-black group-hover:bg-opacity-25">
+        <div className=" flex w-full px-24 opacity-0 -mt-5 group-hover:opacity-100">
+          <div className=" flex flex-col bg-white  w-[20%] p-2 rounded-bl-lg border-spacing-1 border-r border-black">
+            {MegaMenuData.map((d: MegaMenuData, index: number) => (
+              <button
+                key={index}
+                onClick={() => getProducts(d.categoriesId)}
+                className=" my-2"
+              >
+                <div className=" flex flex-row justify-start items-center">
+                  <Image
+                    src={d.icon ? d.icon : ""}
+                    width={20}
+                    height={20}
+                    alt={d.name}
+                  />
+                  <h3 className="mx-1 hover:text-primary-75 active:text-primary-75">
+                    {d.name}
+                  </h3>
+                </div>
+              </button>
+            ))}
           </div>
-          <div className=" flex justify-center items-center gap-2">
-            {products.length > 0 ? (
-              <>
-                {products.map((d: Products, index: number) => (
-                  <div
-                    key={index}
-                    className=" rounded-lg shadow-xl p-1 bg-white cursor-pointer"
-                  >
-                    <div>
-                      <img
-                        src={d.photo}
-                        width="100px"
-                        height="200px"
-                        className=" rounded-lg"
-                      />
+          <div className=" w-[80%] flex bg-white justify-center items-center rounded-br-lg p-2">
+            <div className=" rounded-lg w-20 h-20 bg-white text-primary-75 flex justify-center items-center cursor-pointer mx-1">
+              <h1>view all</h1>
+            </div>
+            <div className=" flex justify-center items-center gap-2">
+              {products.length > 0 ? (
+                <>
+                  {products.map((d: Products, index: number) => (
+                    <div
+                      key={index}
+                      className=" rounded-lg  hover:shadow-xl p-1 bg-white cursor-pointer"
+                    >
+                      <div>
+                        <img
+                          src={d.photo}
+                          width="100px"
+                          height="200px"
+                          className=" rounded-lg"
+                        />
+                      </div>
+                      <h2 className=" text-black">{srt(d.name, 15)}</h2>
                     </div>
-                    <h2 className=" text-black">{srt(d.name, 5)}</h2>
-                  </div>
-                ))}
-              </>
-            ) : (
-              <>
-                <h1>loading...</h1>
-              </>
-            )}
+                  ))}
+                </>
+              ) : (
+                <>
+                  <h1>loading...</h1>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
