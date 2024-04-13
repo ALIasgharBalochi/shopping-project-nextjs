@@ -14,6 +14,7 @@ import DrawerComponent from "../Drawer/Drawer";
 import MegaMenuProduct from "../MegaMenu";
 import AccountMenu from "../Modals/AccoundModal";
 import SearchModal from "../Modals/SearchModal";
+import SearchMobileComponent from "../SearchMobile";
 
 type DataButton = {
   name?: string;
@@ -40,11 +41,7 @@ const Navbar = () => {
     { name: "Contact Us", address: "/" },
   ];
 
-  const IconButton: DataButton[] = [
-    // { icon: searchIcon, address: "/", style: " mx-1" },
-    { icon: bagIcon, address: "/" },
-    // { icon: userIcon, address: "/" },
-  ];
+  const IconButton: DataButton[] = [{ icon: bagIcon, address: "/" }];
 
   return (
     <>
@@ -96,18 +93,8 @@ const Navbar = () => {
           <AccountMenu />
         </div>
       </div>
-      <div className=" min-[800px]:hidden px-16">
-        <div className="pt-2 relative mx-auto text-gray-600">
-          <input
-            className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full"
-            type="search"
-            name="search"
-            placeholder="What can we help you to find?"
-          />
-          <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
-            <Image src={searchIcon} width={20} height={20} alt="img" />
-          </button>
-        </div>
+      <div className="min-[800px]:hidden px-16">
+        <SearchMobileComponent />
       </div>
       <DrawerComponent openDrawer={openDrawer} closeDrawer={onCloseDrawer} />
     </>
