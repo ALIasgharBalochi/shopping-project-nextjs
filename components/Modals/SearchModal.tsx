@@ -1,10 +1,12 @@
+"use client";
 import Image from "next/image";
 
 import { Dialog } from "@mui/material";
 
+import getAllProducts from "@/data/dataFetch";
 import searchIcon from "@/public/iconsax/search-normal-1.svg";
 import closeIcon from "@/public/iconsax/close-circle.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {
   open: boolean;
@@ -27,6 +29,8 @@ const SearchModal = (props: Props) => {
   const { open, close } = props;
 
   const [searchProducts, setSearchProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState<Products[]>([]);
+  const [query, setQuery] = useState<{ text: string }>({ text: "" });
 
   const mostSearched: string[] = [
     "MacBook Pro",
@@ -41,6 +45,11 @@ const SearchModal = (props: Props) => {
     "MagSafe",
   ];
 
+  const handleClose = () => {
+    close();
+    setSearchProducts([]);
+  };
+
   const MostUsedKeyData: string[] = [
     "Tablets",
     "Headphones",
@@ -51,14 +60,35 @@ const SearchModal = (props: Props) => {
     "Phone Cases",
   ];
 
+  useEffect(() => {
+    const allProducts = async () => {
+      const data: Products[] = await getAllProducts();
+      return setProducts(data);
+    };
+    allProducts();
+  }, []);
+
+  const searched = (event: any) => {
+    setQuery({ ...query, text: event.target.value });
+    const allproducts = products.filter((p: Products) => {
+      return p.name.toLowerCase().includes(event.target.value.toLowerCase());
+    });
+    setSearchProducts(allproducts);
+  };
+
+  const srt = (str: string, n: number) => {
+    return str?.length > n ? str.substring(0, n - 1) + "..." : str;
+  };
+
   return (
     <Dialog
       open={open}
       onClose={close}
       sx={{
         "& .MuiDialog-paper": {
-          minWidth: "50%",
-          minHeight: "50%",
+          width: "50%",
+          height: "50%",
+          overflowX: "hidden",
         },
       }}
     >
@@ -66,6 +96,9 @@ const SearchModal = (props: Props) => {
         <div className=" flex items-center">
           <div className="pt-2 relative mr-auto text-gray-600">
             <input
+              value={query.text}
+              // id="input-search"
+              onChange={searched}
               className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full"
               type="search"
               name="search"
@@ -75,16 +108,30 @@ const SearchModal = (props: Props) => {
               <Image src={searchIcon} width={20} height={20} alt="img" />
             </button>
           </div>
-          <div onClick={close} className=" cursor-pointer">
+          <div onClick={handleClose} className=" cursor-pointer">
             <Image src={closeIcon} width={20} height={20} alt="close" />
           </div>
         </div>
         <div>
-          {searchProducts.length > 0 ? (
-            <>
-              <div></div>
-              <div></div>
-            </>
+          {searchProducts.length > 0 && query.text.length > 0 ? (
+            <div className=" w-full h-full grid grid-cols-6 gap-2">
+              {searchProducts.map((p: Products, index) => (
+                <div
+                  key={index}
+                  className=" rounded-lg  hover:shadow-xl p-1 bg-white cursor-pointer"
+                >
+                  <div>
+                    <img
+                      src={p.photo}
+                      width="100px"
+                      height="200px"
+                      className=" rounded-lg"
+                    />
+                  </div>
+                  <h2 className=" text-black">{srt(p.name, 15)}</h2>
+                </div>
+              ))}
+            </div>
           ) : (
             <div className=" flex">
               <div className=" m-3">
