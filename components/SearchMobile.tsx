@@ -67,7 +67,7 @@ const SearchMobileComponent = () => {
   };
 
   return (
-    <div className="group pt-2 relative mx-auto text-gray-600">
+    <div className="group pt-2 relative mx-auto text-gray-600 ">
       <input
         className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full"
         type="search"
@@ -79,7 +79,7 @@ const SearchMobileComponent = () => {
       <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
         <Image src={SearchIcon} width={20} height={20} alt="img" />
       </button>
-      <div className=" invisible group-hover:visible absolute h-screen w-full">
+      <div className=" invisible group-hover:visible absolute bg-white p-3 h-screen w-full">
         {searchProducts.length > 0 && query.text.length > 0 ? (
           <div className="w-full h-full grid grid-cols-3 gap-2">
             {searchProducts.map((p: Products, index) => (
