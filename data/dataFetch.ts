@@ -33,3 +33,16 @@ export async function getPruductsSlider() {
 
     return d
 }
+
+
+export async function getNewProducts() {
+   const res = await fetch('http://localhost:9000/newProducts') 
+
+    if (!res.ok) {
+       throw new Error("Failed to fetch data")
+    }
+
+    const d = res.json()
+
+    return d
+}
