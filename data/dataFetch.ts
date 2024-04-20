@@ -1,3 +1,4 @@
+
 export default async function getAllProducts(){
     const res = await fetch('http://localhost:9000/prodcts');
     
@@ -21,3 +22,14 @@ export async function getAllCategores() {
 }
 
 
+export async function getPruductsSlider() {
+   const res = await fetch('http://localhost:9000/pruductsslider') 
+
+    if (!res.ok) {
+       throw new Error("Failed to fetch data")
+    }
+
+    const d = res.json()
+
+    return d
+}
