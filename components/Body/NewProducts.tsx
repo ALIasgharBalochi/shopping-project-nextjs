@@ -36,7 +36,7 @@ const NewProducts = () => {
 
   return (
     <>
-      <div className=" w-full my-3 h-10 flex items-center justify-between border-b-2 border-black">
+      <div className=" w-full my-3 h-10 flex items-center justify-between border-b-2 border-gray-600">
         <h1 className=" font-bold">New Products</h1>
         <p>View all</p>
       </div>
