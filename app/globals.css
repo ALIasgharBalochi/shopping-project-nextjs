@@ -11,3 +11,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+#iphone-bg{
+    background-image: url('../public/img/bg-iphone.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

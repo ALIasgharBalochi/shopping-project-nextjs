@@ -1,5 +1,6 @@
 import CategoriesComponent from "./CategoresComponent";
 import HeadphoneComponent from "./HeadphoneComponent";
+import IphoneBannerComponent from "./iphoneBanner";
 import NewProducts from "./NewProducts";
 import ProductsSlider from "./ProductsSlider";
 import TopBrandsComponent from "./TopBrands";
@@ -9,6 +10,7 @@ const Body = () => {
       <CategoriesComponent />
       <ProductsSlider />
       <NewProducts />
+      <IphoneBannerComponent />
       <TopBrandsComponent />
       <HeadphoneComponent />
     </div>
