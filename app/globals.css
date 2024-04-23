@@ -5,3 +5,9 @@
 body {
     background-color: rgb(241 245 249);
 }
+#test-bg{
+    background-image: url('../public/img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

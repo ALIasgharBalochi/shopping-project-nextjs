@@ -19,7 +19,7 @@ const TopBrandsComponent = () => {
   return (
     <>
       <div className=" w-full my-3 h-10 flex items-center justify-start border-b-2 border-gray-600">
-        <h1 className=" font-bold">New Products</h1>
+        <h1 className=" font-bold">Top Brads</h1>
       </div>
       <div className=" w-full h-auto flex items-center justify-evenly">
         {data.map((d: Data, index: number) => (

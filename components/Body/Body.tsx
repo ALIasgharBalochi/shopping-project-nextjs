@@ -1,4 +1,5 @@
 import CategoriesComponent from "./CategoresComponent";
+import HeadphoneComponent from "./HeadphoneComponent";
 import NewProducts from "./NewProducts";
 import ProductsSlider from "./ProductsSlider";
 import TopBrandsComponent from "./TopBrands";
@@ -9,6 +10,7 @@ const Body = () => {
       <ProductsSlider />
       <NewProducts />
       <TopBrandsComponent />
+      <HeadphoneComponent />
     </div>
   );
 };
