@@ -37,7 +37,7 @@ const IphoneBannerComponent = () => {
               {data.map((d: Data, index: number) => (
                 <div
                   key={index}
-                  className=" text-xs flex flex-col items-center justify-center p-1 m-1 border-black border-solid border-2 rounded-md"
+                  className=" text-xs flex flex-col items-center justify-center m-1 border-black border-solid border-2 rounded-md w-9 h-9 max-[800px]:w-8 max-[800px]:h-8"
                 >
                   <p>{d.count}</p>
                   <p>{d.time}</p>
