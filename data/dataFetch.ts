@@ -58,3 +58,15 @@ export async function getBestSelersProducts() {
 
     return d
 }
+
+export async function getBlogs() {
+   const res = await fetch('http://localhost:9000/blogs') 
+
+    if (!res.ok) {
+       throw new Error("Failed to fetch data")
+    }
+
+    const d = res.json()
+
+    return d
+}

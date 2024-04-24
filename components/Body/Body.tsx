@@ -1,4 +1,5 @@
 import BestSellersProducts from "./BestSellrsProducts";
+import BlogsComponent from "./BlogsCompoentes";
 import CaseBanner from "./caseBanner";
 import CategoriesComponent from "./CategoresComponent";
 import HeadphoneComponent from "./HeadphoneComponent";
@@ -29,6 +30,7 @@ const Body = () => {
       <BestSellersProducts />
       <TopBrandsComponent />
       <HeadphoneComponent />
+      <BlogsComponent />
     </div>
   );
 };
