@@ -6,6 +6,7 @@ import HeadphoneComponent from "./HeadphoneComponent";
 import IphoneBannerComponent from "./iphoneBanner";
 import NewProducts from "./NewProducts";
 import ProductsSlider from "./ProductsSlider";
+import SuportedComponent from "./SuportedComponent";
 import TopBrandsComponent from "./TopBrands";
 
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
@@ -31,6 +32,7 @@ const Body = () => {
       <TopBrandsComponent />
       <HeadphoneComponent />
       <BlogsComponent />
+      <SuportedComponent />
     </div>
   );
 };
