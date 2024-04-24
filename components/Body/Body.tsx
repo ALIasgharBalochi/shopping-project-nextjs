@@ -1,3 +1,4 @@
+import BestSellersProducts from "./BestSellrsProducts";
 import CaseBanner from "./caseBanner";
 import CategoriesComponent from "./CategoresComponent";
 import HeadphoneComponent from "./HeadphoneComponent";
@@ -25,6 +26,7 @@ const Body = () => {
           </div>
         </Grid>
       </Grid>
+      <BestSellersProducts />
       <TopBrandsComponent />
       <HeadphoneComponent />
     </div>
