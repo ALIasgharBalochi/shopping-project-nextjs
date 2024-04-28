@@ -75,32 +75,34 @@ const BlogsComponent = (): React.ReactNode => {
                     alt="blog"
                   />
                 </div>
-                <div className=" w-full flex flex-col m-2 p-1">
-                  <section className=" w-full flex items-center my-1 justify-around md:hidden">
-                    <p className=" text-gray-500 text-xs">{data[1].date}</p>
-                    <p className=" text-gray-500 text-xs">{data[1].userName}</p>
-                  </section>
-                  <h1 className="group-hover:text-secondary-300 text-start text-black text-sm font-bold">
-                    <span className=" min-[768px]:hidden">
+                <div className=" w-full flex flex-col m-2 p-1 ">
+                  <div className=" md:hidden">
+                    <section className=" w-full flex items-center my-1 justify-around md:hidden">
+                      <p className=" text-gray-500 text-xs">{data[1].date}</p>
+                      <p className=" text-gray-500 text-xs">
+                        {data[1].userName}
+                      </p>
+                    </section>
+                    <h1 className=" text-black text-sm font-bold group-hover:text-secondary-300">
                       {srt(data[1].title, 35)}
-                    </span>
-                    <span className=" max-[768px]:hidden">
-                      {srt(data[1].title, 45)}
-                    </span>
-                  </h1>
-                  <p className=" text-gray-700 text-xs">
-                    <span className=" min-[768]:hidden">
+                    </h1>
+                    <p className=" text-gray-700 text-xs">
                       {srt(data[1].content, 75)}
-                    </span>
-                    <span className=" max-[768]:hidden">
-                      {srt(data[1].content, 95)}
-                    </span>
-                  </p>
-                  <div className=" max-[768px]:hidden flex flex-row items-center mt-auto justify-between w-full">
-                    <p className=" text-gray-500 text-xs">{data[1].date}</p>
-                    <p className=" text-gray-500 text-xs group-hover:text-secondary-300">
-                      save
                     </p>
+                  </div>
+                  <div className="max-[767px]:hidden">
+                    <h1 className=" text-md group-hover:text-secondary-300">
+                      {srt(data[1].title, 45)}
+                    </h1>
+                    <p className=" text-gray-600 text-sm">
+                      {srt(data[1].content, 95)}
+                    </p>
+                    <div className=" flex flex-row items-center mt-auto justify-between w-full">
+                      <p className=" text-gray-500 text-xs">{data[1].date}</p>
+                      <p className=" text-gray-500 text-xs group-hover:text-secondary-300">
+                        save
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -112,33 +114,34 @@ const BlogsComponent = (): React.ReactNode => {
                     alt="blog"
                   />
                 </div>
-                <div className=" w-full flex flex-col m-2 p-1">
-                  <section className=" w-full flex items-center my-1 justify-around md:hidden">
-                    <p className=" text-gray-500 text-xs">{data[2].date}</p>
-                    <p className=" text-gray-500 text-xs">{data[2].userName}</p>
-                  </section>
-
-                  <h1 className="group-hover:text-secondary-300 text-start text-black text-sm font-bold">
-                    <span className=" min-[768px]:hidden">
+                <div className=" w-full flex flex-col m-2 p-1 ">
+                  <div className=" md:hidden">
+                    <section className=" w-full flex items-center my-1 justify-around md:hidden">
+                      <p className=" text-gray-500 text-xs">{data[2].date}</p>
+                      <p className=" text-gray-500 text-xs">
+                        {data[2].userName}
+                      </p>
+                    </section>
+                    <h1 className=" text-black text-sm font-bold group-hover:text-secondary-300">
                       {srt(data[2].title, 35)}
-                    </span>
-                    <span className=" max-[768px]:hidden">
-                      {srt(data[2].title, 45)}
-                    </span>
-                  </h1>
-                  <p className=" text-gray-700 text-xs">
-                    <span className=" min-[768]:hidden">
+                    </h1>
+                    <p className=" text-gray-700 text-xs">
                       {srt(data[2].content, 75)}
-                    </span>
-                    <span className=" max-[768]:hidden">
-                      {srt(data[2].content, 95)}
-                    </span>
-                  </p>
-                  <div className=" max-[768px]:hidden flex flex-row items-center mt-auto justify-between w-full">
-                    <p className=" text-gray-500 text-xs">{data[2].date}</p>
-                    <p className=" text-gray-500 text-xs group-hover:text-secondary-300">
-                      save
                     </p>
+                  </div>
+                  <div className=" max-[767px]:hidden">
+                    <h1 className=" text-md group-hover:text-secondary-300">
+                      {srt(data[2].title, 45)}
+                    </h1>
+                    <p className=" text-gray-600 text-sm">
+                      {srt(data[2].content, 95)}
+                    </p>
+                    <div className=" flex flex-row items-center mt-auto justify-between w-full">
+                      <p className=" text-gray-500 text-xs">{data[2].date}</p>
+                      <p className=" text-gray-500 text-xs group-hover:text-secondary-300">
+                        save
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
