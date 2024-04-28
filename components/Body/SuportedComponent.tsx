@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import lagt from "@/public/days-return.jpg";
-import g from "@/public/original-products.jpg";
-import fso from "@/public/express-delivery.jpg";
-import suport from "@/public/support.jpg";
+import lagt from "@/public/days-return.png";
+import g from "@/public/original-products.png";
+import fso from "@/public/express-delivery.png";
+import suport from "@/public/support.png";
 
 type Data = {
   img: any;
