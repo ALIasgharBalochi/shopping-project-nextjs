@@ -3,26 +3,17 @@
 import { useState } from "react";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import bagIcon from "@/public/iconsax/bag.svg";
-import searchIcon from "@/public/iconsax/search-normal-1.svg";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
 import DrawerComponent from "../Drawer/Drawer";
 import MegaMenuProduct from "../MegaMenu";
-import AccountMenu from "../Modals/AccoundModal";
-import SearchModal from "../Modals/SearchModal";
 import SearchMobileComponent from "../SearchMobile";
 
-type DataButton = {
-  name?: string;
-  icon?: string;
-  address: string;
-  style?: string;
-};
-
+import { DataButton } from "../Types/Types";
+import IconButtonComponents from "./IconButtonComponents";
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openSearchModal, setOpenSearchModal] = useState(false);
@@ -68,30 +59,12 @@ const Navbar = () => {
         <div className=" min-[800px]:hidden">
           <h1>LOGO</h1>
         </div>
-        <div className=" flex items-center">
-          <button
-            className="mx-1 max-[800px]:hidden"
-            onClick={() => setOpenSearchModal(true)}
-          >
-            <Image src={searchIcon} width={20} height={20} alt="img" />
-          </button>
-          <SearchModal open={openSearchModal} close={onCloseSearchModal} />
-          {IconButton.map((d: DataButton, index: number) => (
-            <Link
-              key={index}
-              href={d.address}
-              className={d.style ? d.style : "mx-1"}
-            >
-              <Image
-                src={d.icon != undefined ? d.icon : " "}
-                width={20}
-                height={20}
-                alt="img"
-              />
-            </Link>
-          ))}
-          <AccountMenu />
-        </div>
+        <IconButtonComponents
+          onCloseSearchModal={onCloseSearchModal}
+          openSearchModal={openSearchModal}
+          IconButton={IconButton}
+          setOpenSearchModal={setOpenSearchModal}
+        />
       </div>
       <div className="min-[800px]:hidden px-16">
         <SearchMobileComponent />
