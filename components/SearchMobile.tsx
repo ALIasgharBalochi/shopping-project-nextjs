@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-import getAllProducts from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 
 import SearchIcon from "@/public/iconsax/search-normal-1.svg";
 
@@ -48,7 +48,8 @@ const SearchMobileComponent = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await getAllProducts();
+      const URLgetAllproducts: string = "http://localhost:9000/prodcts";
+      const res = await fetchData(URLgetAllproducts);
       setProducts(res);
     };
     fetch();

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getPruductsSlider } from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
@@ -25,7 +25,9 @@ const ProductsSlider = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await getPruductsSlider();
+      const URLgetProductsSlider: string =
+        "http://localhost:9000/pruductsslider";
+      const res = await fetchData(URLgetProductsSlider);
       return setProducts(res);
     };
     fetch();

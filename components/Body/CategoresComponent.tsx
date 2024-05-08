@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-import { getAllCategores } from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 
 type CategoreiType = {
   id: number;
@@ -13,7 +13,8 @@ const CategoriesComponent = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getAllCategores();
+      const URLgetAllproducts: string = "http://localhost:9000/categories";
+      const res = await fetchData(URLgetAllproducts);
       return setData(res);
     };
 

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-import { getNewProducts } from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Star } from "@mui/icons-material";
@@ -27,7 +27,8 @@ const NewProducts = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getNewProducts();
+      const URLgetNewProducts: string = "http://localhost:9000/newProducts";
+      const res = await fetchData(URLgetNewProducts);
       return setData(res);
     };
 

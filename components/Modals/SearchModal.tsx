@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Dialog } from "@mui/material";
 
-import getAllProducts from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 import searchIcon from "@/public/iconsax/search-normal-1.svg";
 import closeIcon from "@/public/iconsax/close-circle.svg";
 import { useEffect, useState } from "react";
@@ -62,7 +62,8 @@ const SearchModal = (props: Props) => {
 
   useEffect(() => {
     const allProducts = async () => {
-      const data: Products[] = await getAllProducts();
+      const URLgetAllProducts: string = "http://localhost:9000/prodcts";
+      const data: Products[] = await fetchData(URLgetAllProducts);
       return setProducts(data);
     };
     allProducts();

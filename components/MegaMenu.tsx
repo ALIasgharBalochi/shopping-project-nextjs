@@ -10,7 +10,7 @@ import keyboardIcon from "@/public/iconsax/keyboard.svg";
 import mouseIcon from "@/public/iconsax/mouse.svg";
 import caseIcon from "@/public/iconsax/speaker.svg";
 
-import getAllProducts from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 
 type MegaMenuData = {
   icon: string;
@@ -45,7 +45,8 @@ const MegaMenuProduct = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getAllProducts();
+      const URLgetAllProducts: string = "http://localhost:9000/prodcts";
+      const res = await fetchData(URLgetAllProducts);
       setAllProducts(res);
     };
 

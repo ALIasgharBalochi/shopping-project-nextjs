@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
-import { getBlogs } from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 
 type Blogs = {
   id: string;
@@ -25,7 +25,8 @@ const BlogsComponent = (): React.ReactNode => {
 
   useEffect((): void => {
     const fetch = async () => {
-      const res = await getBlogs();
+      const URLgetBlogs: string = "http://localhost:9000/blogs";
+      const res = await fetchData(URLgetBlogs);
       return setData(res);
     };
     fetch();

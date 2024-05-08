@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { getBestSelersProducts } from "@/data/dataFetch";
+import fetchData from "@/data/dataFetch";
 
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Star } from "@mui/icons-material";
@@ -26,7 +26,9 @@ const BestSellersProducts = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getBestSelersProducts();
+      const URLgetBestSelersProdcuts: string =
+        "http://localhost:9000/beastselers";
+      const res = await fetchData(URLgetBestSelersProdcuts);
       return setData(res);
     };
 
