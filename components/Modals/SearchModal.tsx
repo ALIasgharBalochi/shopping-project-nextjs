@@ -1,4 +1,6 @@
 "use client";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 
 import { Dialog } from "@mui/material";
@@ -6,28 +8,13 @@ import { Dialog } from "@mui/material";
 import fetchData from "@/data/dataFetch";
 import searchIcon from "@/public/iconsax/search-normal-1.svg";
 import closeIcon from "@/public/iconsax/close-circle.svg";
-import { useEffect, useState } from "react";
-
+import CheckLengthStr from "../CheckLengthStr";
+import { Products } from "../Types/Types";
 type Props = {
   open: boolean;
   close: () => void;
 };
-
-type Products = {
-  id: string;
-  name: string;
-  photo: string;
-  photos: string[];
-  color: string[];
-  price: number;
-  categorie: number;
-  description: string;
-  specifications: object[];
-};
-
-const SearchModal = (props: Props) => {
-  const { open, close } = props;
-
+const SearchModal: React.FC<Props> = ({ open, close }) => {
   const [searchProducts, setSearchProducts] = useState<Products[]>([]);
   const [products, setProducts] = useState<Products[]>([]);
   const [query, setQuery] = useState<{ text: string }>({ text: "" });
@@ -77,10 +64,6 @@ const SearchModal = (props: Props) => {
     setSearchProducts(allproducts);
   };
 
-  const srt = (str: string, n: number) => {
-    return str?.length > n ? str.substring(0, n - 1) + "..." : str;
-  };
-
   return (
     <Dialog
       open={open}
@@ -128,7 +111,9 @@ const SearchModal = (props: Props) => {
                       className=" rounded-lg"
                     />
                   </div>
-                  <h2 className=" text-black">{srt(p.name, 15)}</h2>
+                  <h2 className=" text-black">
+                    <CheckLengthStr str={p.name} n={15} />
+                  </h2>
                 </div>
               ))}
             </div>
