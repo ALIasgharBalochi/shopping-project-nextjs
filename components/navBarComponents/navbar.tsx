@@ -14,6 +14,7 @@ import SearchMobileComponent from "../SearchMobile";
 
 import { DataButton } from "../Types/Types";
 import IconButtonComponents from "./IconButtonComponents";
+import LogoComponent from "./LogoComponent";
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openSearchModal, setOpenSearchModal] = useState(false);
@@ -37,9 +38,7 @@ const Navbar = () => {
   return (
     <>
       <div className=" min-[800px]:px-24 px-16 flex justify-between items-center h-16 border-spacing-1 min-[800px]:border-b border-primary-75">
-        <div className=" max-[800px]:hidden">
-          <h1>LOGO</h1>
-        </div>
+        <LogoComponent style="max-[800px]:hidden" text="LOGO" />
         <div
           onClick={() => setOpenDrawer(true)}
           className=" min-[800px]:hidden"
@@ -56,9 +55,7 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <div className=" min-[800px]:hidden">
-          <h1>LOGO</h1>
-        </div>
+        <LogoComponent style="min-[800px]:hidden" text="LOGO" />
         <IconButtonComponents
           onCloseSearchModal={onCloseSearchModal}
           openSearchModal={openSearchModal}
