@@ -17,3 +17,19 @@ export type Products = {
   description: string;
   specifications: object[];
 };
+
+export type OpenDrawer = {
+  openDrawer: boolean;
+  closeDrawer: () => void;
+};
+
+export type DrawerData = {
+  name: string;
+  address: string;
+};
+
+export type AccordianData = {
+  icon: string;
+  name: string;
+  address: string;
+};
