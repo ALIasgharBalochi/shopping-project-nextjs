@@ -1,20 +1,17 @@
 "use client";
-
 import { useState } from "react";
-
-import Link from "next/link";
 
 import bagIcon from "@/public/iconsax/bag.svg";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
 import DrawerComponent from "../Drawer/Drawer";
-import MegaMenuProduct from "../MegaMenu";
 import SearchMobileComponent from "../SearchMobile";
 
 import { DataButton } from "../Types/Types";
 import IconButtonComponents from "./IconButtonComponents";
 import LogoComponent from "./LogoComponent";
+import LinkButton from "./LinkButton/LinkButton";
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openSearchModal, setOpenSearchModal] = useState(false);
@@ -26,12 +23,6 @@ const Navbar = () => {
   const onCloseSearchModal = () => {
     setOpenSearchModal(false);
   };
-  const dataButton: DataButton[] = [
-    { name: "Home", address: "/" },
-    { name: "Blog", address: "/" },
-    { name: "FAQ", address: "/" },
-    { name: "Contact Us", address: "/" },
-  ];
 
   const IconButton: DataButton[] = [{ icon: bagIcon, address: "/" }];
 
@@ -45,16 +36,7 @@ const Navbar = () => {
         >
           <MenuIcon />
         </div>
-        <div className="max-[800px]:hidden flex">
-          <MegaMenuProduct />
-          {dataButton.map((d: DataButton, index: number) => (
-            <Link key={index} href={d.address} className=" mx-3">
-              <button className="hover:text-primary-100 hover:border-spacing-1 hover:border-b hover:border-primary-100">
-                {d.name}
-              </button>
-            </Link>
-          ))}
-        </div>
+        <LinkButton />
         <LogoComponent style="min-[800px]:hidden" text="LOGO" />
         <IconButtonComponents
           onCloseSearchModal={onCloseSearchModal}
@@ -70,5 +52,4 @@ const Navbar = () => {
     </>
   );
 };
-
 export default Navbar;
