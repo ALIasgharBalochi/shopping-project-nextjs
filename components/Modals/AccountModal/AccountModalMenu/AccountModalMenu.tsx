@@ -3,7 +3,7 @@ import { Menu } from "@mui/material";
 
 type Props = {
   open: boolean;
-  handleClose: (e: React.MouseEvent<HTMLElement>) => void;
+  handleClose: () => void;
   anchorEl: null | HTMLElement;
 };
 const AccountModalMenu: React.FC<Props> = ({ anchorEl, open, handleClose }) => {

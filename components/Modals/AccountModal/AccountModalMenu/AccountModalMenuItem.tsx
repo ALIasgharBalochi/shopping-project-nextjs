@@ -12,7 +12,7 @@ type AccoundMenuType = {
   address: string;
 };
 type Props = {
-  handleClose: (e: React.MouseEvent<HTMLElement>) => void;
+  handleClose: () => void;
 };
 const AccountModalMenuItem: React.FC<Props> = ({ handleClose }) => {
   const AccountMenuData: AccoundMenuType[] = [
