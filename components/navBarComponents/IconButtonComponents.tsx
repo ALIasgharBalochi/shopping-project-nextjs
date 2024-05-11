@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import searchIcon from "@/public/iconsax/search-normal-1.svg";
-import AccountMenu from "../Modals/AccoundModal";
+import AccountMenu from "../Modals/AccountModal/AccoundModal";
 import SearchModal from "../Modals/SearchModal";
 import { DataButton } from "../Types/Types";
 type PropsType = {
