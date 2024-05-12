@@ -1,30 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import searchIcon from "@/public/iconsax/search-normal-1.svg";
 import AccountMenu from "../Modals/AccountModal/AccoundModal";
-import SearchModal from "../Modals/SearchModal";
+import SearchModal from "../Modals/SearchModal/SearchModal";
 import { DataButton } from "../Types/Types";
 type PropsType = {
-  setOpenSearchModal: (arg: boolean) => void;
-  openSearchModal: boolean;
-  onCloseSearchModal: () => void;
   IconButton: DataButton[];
 };
-const IconButtonComponents: React.FC<PropsType> = ({
-  setOpenSearchModal,
-  openSearchModal,
-  IconButton,
-  onCloseSearchModal,
-}) => {
+const IconButtonComponents: React.FC<PropsType> = ({ IconButton }) => {
   return (
     <div className=" flex items-center">
-      <button
-        className="mx-1 max-[800px]:hidden"
-        onClick={() => setOpenSearchModal(true)}
-      >
-        <Image src={searchIcon} width={20} height={20} alt="img" />
-      </button>
-      <SearchModal open={openSearchModal} close={onCloseSearchModal} />
+      {/* button search modal */}
+      <SearchModal />
       {IconButton.map((d: DataButton, index: number) => (
         <Link
           key={index}

@@ -14,14 +14,9 @@ import LogoComponent from "./LogoComponent";
 import LinkButton from "./LinkButton/LinkButton";
 const Navbar = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [openSearchModal, setOpenSearchModal] = useState(false);
 
   const onCloseDrawer = () => {
     setOpenDrawer(false);
-  };
-
-  const onCloseSearchModal = () => {
-    setOpenSearchModal(false);
   };
 
   const IconButton: DataButton[] = [{ icon: bagIcon, address: "/" }];
@@ -38,12 +33,7 @@ const Navbar = () => {
         </div>
         <LinkButton />
         <LogoComponent style="min-[800px]:hidden" text="LOGO" />
-        <IconButtonComponents
-          onCloseSearchModal={onCloseSearchModal}
-          openSearchModal={openSearchModal}
-          IconButton={IconButton}
-          setOpenSearchModal={setOpenSearchModal}
-        />
+        <IconButtonComponents IconButton={IconButton} />
       </div>
       <div className="min-[800px]:hidden px-16">
         <SearchMobileComponent />
