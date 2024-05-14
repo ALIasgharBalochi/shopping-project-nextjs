@@ -33,3 +33,9 @@ export type AccordianData = {
   name: string;
   address: string;
 };
+
+export type CategoreiType = {
+  id: number;
+  name: string;
+  photo: string;
+};
