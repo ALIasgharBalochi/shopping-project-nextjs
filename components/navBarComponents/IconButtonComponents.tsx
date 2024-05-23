@@ -9,7 +9,6 @@ type PropsType = {
 const IconButtonComponents: React.FC<PropsType> = ({ IconButton }) => {
   return (
     <div className=" flex items-center">
-      {/* button search modal */}
       <SearchModal />
       {IconButton.map((d: DataButton, index: number) => (
         <Link

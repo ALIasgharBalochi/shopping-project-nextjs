@@ -4,7 +4,7 @@ import CaseBanner from "./caseBanner";
 import CategoriesComponent from "./CategoresCompoennt/CategoresComponent";
 import HeadphoneComponent from "./HeadphoneComponent";
 import IphoneBannerComponent from "./iphoneBanner";
-import NewProducts from "./NewProducts";
+import NewProducts from "./NewProducts/NewProducts";
 import ProductsSlider from "./PruductsSlider/ProductsSlider";
 import SuportedComponent from "./SuportedComponent";
 import TopBrandsComponent from "./TopBrands";
