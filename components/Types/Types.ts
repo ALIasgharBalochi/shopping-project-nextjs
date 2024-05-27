@@ -39,3 +39,18 @@ export type CategoreiType = {
   name: string;
   photo: string;
 };
+
+export type Blogs = {
+  id: string;
+  date: string;
+  photo_tomnail: string;
+  photo_back: string;
+  title: string;
+  content: string;
+  userName: string;
+  userID: string;
+  reactions: {
+    like: number;
+    dislike: number;
+  };
+};

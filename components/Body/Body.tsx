@@ -1,5 +1,5 @@
 import BestSellersProducts from "./BestSellrsProducts/BestSellrsProducts";
-import BlogsComponent from "./BlogsCompoentes";
+import BlogsComponent from "./BlogsComponent/BlogsCompoentes";
 import CaseBanner from "./caseBanner";
 import CategoriesComponent from "./CategoresCompoennt/CategoresComponent";
 import HeadphoneComponent from "./HeadphoneComponent";
