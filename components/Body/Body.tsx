@@ -1,4 +1,4 @@
-import BestSellersProducts from "./BestSellrsProducts";
+import BestSellersProducts from "./BestSellrsProducts/BestSellrsProducts";
 import BlogsComponent from "./BlogsCompoentes";
 import CaseBanner from "./caseBanner";
 import CategoriesComponent from "./CategoresCompoennt/CategoresComponent";
